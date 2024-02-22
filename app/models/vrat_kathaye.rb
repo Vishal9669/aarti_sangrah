@@ -1,0 +1,2 @@
+class VratKathaye < ApplicationRecord
+end

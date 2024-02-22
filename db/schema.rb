@@ -10,13 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_22_125214) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_22_173424) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "aartis", force: :cascade do |t|
     t.string "title"
-    t.text "lyrics"
+    t.text "lyrics", default: [], array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "chalisas", force: :cascade do |t|
+    t.string "title"
+    t.text "lyrics", default: [], array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "jyotirlings", force: :cascade do |t|
+    t.string "title"
+    t.text "location", default: [], array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "mantras", force: :cascade do |t|
+    t.string "title"
+    t.text "mantra", default: [], array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "vrat_kathayes", force: :cascade do |t|
+    t.string "title"
+    t.text "story", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

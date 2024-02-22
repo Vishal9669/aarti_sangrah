@@ -1,0 +1,2 @@
+class Chalisa < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class Jyotirling < ApplicationRecord
+end

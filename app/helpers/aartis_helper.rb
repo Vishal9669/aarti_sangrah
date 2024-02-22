@@ -1,0 +1,2 @@
+module AartisHelper
+end

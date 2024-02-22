@@ -1,0 +1,2 @@
+class Aarti < ApplicationRecord
+end
