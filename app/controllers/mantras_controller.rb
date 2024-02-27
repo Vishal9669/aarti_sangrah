@@ -39,6 +39,6 @@ class MantrasController < ApplicationController
   end
 
   def mantra_params
-    params.require(:mantra).permit(:title, mantra: [])
+    params.permit(:title, mantra: [])
   end
 end

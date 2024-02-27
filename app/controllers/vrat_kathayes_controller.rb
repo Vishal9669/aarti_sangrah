@@ -14,7 +14,7 @@ class VratKathayesController < ApplicationController
     @vrat_kathaye = VratKathaye.new(vrat_kathaye_params)
 
     if @vrat_kathaye.save
-      render json: { message: 'VratKathaye was successfully created.', vrat_kathaye: @@vrat_kathaye }, status: :created, location: @vrat_kathaye
+      render json: { message: 'VratKathaye was successfully created.', vrat_kathaye: @vrat_kathaye }, status: :created, location: @vrat_kathaye
     else
       render json: @vrat_kathaye.errors, status: :unprocessable_entity
     end
