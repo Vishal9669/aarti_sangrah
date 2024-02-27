@@ -39,6 +39,6 @@ class JyotirlingsController < ApplicationController
   end
 
   def jyotirling_params
-    params.require(:jyotirling).permit(:title, :location)
+    params.require(:jyotirling).permit(:title, location: [])
   end
 end

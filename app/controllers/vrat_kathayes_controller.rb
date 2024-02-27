@@ -14,7 +14,7 @@ class VratKathayesController < ApplicationController
     @vrat_kathaye = VratKathaye.new(vrat_kathaye_params)
 
     if @vrat_kathaye.save
-      render json: @vrat_kathaye, status: :created, location: @vrat_kathaye
+      render json: { message: 'VratKathaye was successfully created.', vrat_kathaye: @@vrat_kathaye }, status: :created, location: @vrat_kathaye
     else
       render json: @vrat_kathaye.errors, status: :unprocessable_entity
     end
@@ -22,7 +22,7 @@ class VratKathayesController < ApplicationController
 
   def update
     if @vrat_kathaye.update(vrat_kathaye_params)
-      render json: @vrat_kathaye
+      render json: { message: 'VratKathaye was successfully updated.', vrat_kathaye: @vrat_kathaye }
     else
       render json: @vrat_kathaye.errors, status: :unprocessable_entity
     end
@@ -30,6 +30,7 @@ class VratKathayesController < ApplicationController
 
   def destroy
     @vrat_kathaye.destroy
+    render json: { message: 'VratKathaye was successfully destroyed.' }
   end
 
   private
@@ -38,6 +39,6 @@ class VratKathayesController < ApplicationController
   end
 
   def vrat_kathaye_params
-    params.require(:vrat_kathaye).permit(:title, :story)
+    params.require(:vrat_kathaye).permit(:title, story: [])
   end
 end

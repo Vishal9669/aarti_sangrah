@@ -39,6 +39,6 @@ class ChalisasController < ApplicationController
   end
 
   def chalisa_params
-    params.require(:chalisa).permit(:title, :lyrics)
+    params.require(:chalisa).permit(:title, lyrics: [])
   end
 end

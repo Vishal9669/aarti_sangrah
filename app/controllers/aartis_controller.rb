@@ -39,6 +39,6 @@ class AartisController < ApplicationController
   end
 
   def aarti_params
-    params.require(:aarti).permit(:title, :lyrics)
+    params.require(:aarti).permit(:title, lyrics: [])
   end
 end
